@@ -123,6 +123,17 @@ void print_timing(int mon_arg, void (*ma_fonction)(int), int nombre_init, int no
 ## Exercice 4
 
 
+<br/>
+
+ Les valeurs obtenues sont :
+|  n      | 10000   | 10^6 | 10^7 | 10^8 | 10^9 |
+|:--------|--------|-------|---------|----------|-----------|
+| seq  | 9034   | 87931 | 888774  | 9083605  | 688093670 |
+| alea  | 9034   | 87931 | 888774  | 9083605  | 688093670 |
+
+
+<br/>
+
 
 <br/>
 
