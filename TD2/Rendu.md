@@ -132,11 +132,8 @@ void print_timing(int mon_arg, void (*ma_fonction)(int), int nombre_init, int no
 | seq  | 9034   | 87931 | 888774  | 9083605  | 688093670 |
 | alea  | 9034   | 87931 | 888774  | 9083605  | 688093670 |
 
-
 <br/>
 
-
-<br/>
 ```
 #include <stdio.h>
 #include <x86intrin.h>
