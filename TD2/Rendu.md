@@ -70,6 +70,48 @@ int main(){
 
 <br/>
 
+```
+#include <stdio.h>
+#include <x86intrin.h>
+
+void acces_seq(int n)
+{
+    int *TAB;
+    TAB = malloc(sizeof(int) * 1000000000);
+    for (int i = 0; i < n; i++)
+    {
+        TAB[i] = i;
+    }
+}
+
+void acces_alea(int n)
+{
+    int *TAB;
+    TAB = malloc(sizeof(int) * 100000);
+    for (int i = 0; i < n; i++)
+    {
+        if (i / 100 == 0)
+        {
+            printf("Done %d percent\n", 100 * i / n);
+        }
+
+        TAB[rand()] = i;
+    }
+}
+
+void print_timing(int mon_arg, void (*ma_fonction)(int), int nombre_init, int nombre_iter)
+{ 
+  ...
+}
+
+void main()
+{
+    int n = 1000000;
+
+    print_timing(n, acces_seq, 5, 10);
+    print_timing(n, acces_alea, 5, 10);
+}
+```
 
 ## Exercice 3
 ```
