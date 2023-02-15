@@ -4,21 +4,23 @@
 void acces_seq(int n)
 {
     int *TAB;
-    TAB = malloc(sizeof(int) * 1000000000);
+    TAB = malloc(sizeof(int) * 10000000);
     for (int i = 0; i < n; i++)
     {
         TAB[i] = i;
     }
+    free(TAB);
 }
 
 void acces_alea(int n)
 {
     int *TAB;
-    TAB = malloc(sizeof(int) * 1000000000);
+    TAB = malloc(sizeof(int) * 10000000);
     for (int i = 0; i < n; i++)
     {
-        TAB[rand()] = i;
+        TAB[rand() % n] = i;
     }
+    free(TAB);
 }
 
 void print_timing(int mon_arg, void (*ma_fonction)(int), int nombre_init, int nombre_iter)
@@ -52,7 +54,7 @@ void print_timing(int mon_arg, void (*ma_fonction)(int), int nombre_init, int no
 
     // moyenne
 
-    unsigned long int moyenne;
+    unsigned long int moyenne = 0;
 
     for (int i = 0; i < nombre_iter; i++)
     {
@@ -66,7 +68,7 @@ void print_timing(int mon_arg, void (*ma_fonction)(int), int nombre_init, int no
 
 void main()
 {
-    int n = 1000000;
+    int n = 10000;
 
     print_timing(n, acces_seq, 5, 10);
     print_timing(n, acces_alea, 5, 10);
